@@ -1,70 +1,40 @@
-# Getting Started with Create React App
+# CO2 Emissions Challenge
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+For this Frontend challenge, we'd like you to implement a react app that visualizes historical CO2 emissions by country. The user should also be able to browse the emissions data over different years. You will find the useful links helpful to get started.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+Some high-level requirements:
 
-### `npm start`
+* User can view a world map with an visual overview CO2 emissions
+* User can navgiate between years and the data should update accordingly
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Bonus objective to allow detailed inspection of CO2 emission by type within a country.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+* User can select individual countries to see the corresponding CO2 emissions breakdown
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Getting Started
 
-### `npm run build`
+1. Ensure node & npm are installed
+2. Create a react starter app following documentation in useful links
+3. Read through examples in `react-simple-maps` and its relevant documentation
+4. Add a choropleth world map to the application
+5. Download CO2 data from `owid`, either csv or json subject to implementation
+6. Update the world map to load CO2 data instead (fixed year)
+7. Use a slider component from `material-ui` to allow user to select different years
+8. Polish the UI so that it looks nice
+9. BONUS: Add pop-over info-boxes on hover or click per country
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Useful Links
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* UI Components: https://material-ui.com/ , for slider UI component
+* CO2 Data: https://github.com/owid/co2-data , for raw CO2 data csv/json
+* Mapping Library: https://www.react-simple-maps.io/ , for rendering world map
+* React Starter App: https://reactjs.org/docs/create-a-new-react-app.html
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Mockup
+<img src="mockup.jpg" alt="drawing" width="450"/>
