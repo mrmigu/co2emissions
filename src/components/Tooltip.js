@@ -53,9 +53,9 @@ const Tooltip = ({content, year}) => {
                 </span>
                 {co2 ? co2.toLocaleString() : "N/A"}
                 {co2_growth_abs && (
-                    <span style={{color: co2_growth_abs >= 0 ? "green" : "red"}}>
+                    <div style={{color: co2_growth_abs >= 0 ? "green" : "red"}}>
                         {co2_growth_abs >= 0 ? "⬆" : "⬇"}{co2_growth_abs} ({co2_growth_prct}%)
-                    </span>
+                    </div>
                 )}
             </div>
             {co2 && (
