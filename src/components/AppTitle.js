@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 
 const AppTitle = (props) => {
     return (
-        <h1>CO2 Emmisions By Year: {props.year}</h1>
+        <h1>CO2 Emissions By Year: {props.year}</h1>
     )
 }
 

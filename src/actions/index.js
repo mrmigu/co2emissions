@@ -11,3 +11,9 @@ export const changeTooltip = tooltipContent => {
         payload: tooltipContent
     };
 };
+
+export const initCo2Data = () => {
+    return {
+        type: "INIT_CO2_DATA",
+    };
+};
