@@ -4,3 +4,10 @@ export const changeYear = year => {
         payload: year
     };
 };
+
+export const changeTooltip = tooltipContent => {
+    return {
+        type: "SET_TOOLTIP_CONTENT",
+        payload: tooltipContent
+    };
+};

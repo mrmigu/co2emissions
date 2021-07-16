@@ -3,51 +3,75 @@ import {
   ComposableMap,
   Geographies,
   Geography,
-  Sphere,
-  Graticule
 } from "react-simple-maps";
 import { scaleLinear } from "d3-scale";
+import { changeTooltip } from "../actions";
 
 
 const geoUrl = "https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-110m.json"
-// const geoUrl = "/world.json";
 
-const WorldMap = ({year, co2Data, maxCo2}) => {
-console.log("maxCo2", maxCo2)    
+const WorldMap = ({year, co2Data, maxCo2, changeTooltip}) => {
     const colorScale = scaleLinear()
     .domain([0, maxCo2])
-    .range(["#ffedea", "#ff5233"]);
-
+    .range(["#ffedea", "#ff5533"]);
 
     return (
-    <ComposableMap
-      projectionConfig={{
-        rotate: [-10, 0, 0],
-        scale: 100
-      }}
-    >
-      <Sphere stroke="#E4E5E6" strokeWidth={0.5} />
-      <Graticule stroke="#E4E5E6" strokeWidth={0.5} />
-      {co2Data.length > 0 && (
-        <Geographies geography={geoUrl}>
-          {({ geographies }) =>
-            geographies.map((geo) => {
-              const d = Object.values(co2Data).find((countryData) => {
-                  return countryData.iso_code === geo.properties.ISO_A3
-              });
-              return (
-                <Geography
-                  key={geo.rsmKey}
-                  geography={geo}
-                  fill={d ? colorScale(d[year]) : "#F5F4F6"}
-                />
-              );
-            })
-          }
-        </Geographies>
-      )}
-    </ComposableMap>
-  );
+        <ComposableMap 
+            data-tip=""
+            projectionConfig={{
+                scale: 150,
+            }}
+            width={800}
+            height={400}
+        >
+            {co2Data && co2Data.length > 0 && (
+                <Geographies 
+                    geography={geoUrl}
+                >
+                {({ geographies }) =>
+                    geographies.map((geo) => {
+                    const emmisionsData = Object.values(co2Data).find((countryData) => {
+                        return countryData.iso_code === geo.properties.ISO_A3
+                    });
+                    return (
+                        <Geography
+                            key={geo.rsmKey}
+                            geography={geo}
+                            fill={emmisionsData ?
+                                emmisionsData[year] ?
+                                    colorScale(emmisionsData[year]) 
+                                    : "#000000" // no emmision data for the country for the selected year
+                                : "#EEEEEE" //no emmision data for the country
+                            }
+                            onMouseEnter={() => {
+                                changeTooltip({
+                                    name: geo?.properties?.NAME,
+                                    population: geo?.properties?.POP_EST,
+                                    co2: emmisionsData && emmisionsData[year],
+                                });
+                            }}
+                            onMouseLeave={() => {
+                                changeTooltip(null);
+                            }}
+                            style={{
+                                default: {
+                                    outline: "none",
+                                },
+                                hover: {
+                                    outline: "none"
+                                },
+                                pressed: {
+                                    outline: "none",
+                                },
+                            }}
+                        />
+                    );
+                    })
+                }
+                </Geographies>
+            )}
+        </ComposableMap>
+    );
 };
 
 const mapStateToProps = (state) => {
@@ -58,4 +82,4 @@ const mapStateToProps = (state) => {
      }
  }
  
-export default connect(mapStateToProps)(WorldMap); 
+export default connect(mapStateToProps, {changeTooltip})(WorldMap); 

@@ -1,6 +1,7 @@
 const constants = {
-    startYear: 1990,
-    endYear: 2018
+    WORLD_ISO: "OWID_WRL",
+    START_YEAR: 1990,
+    END_YEAR: 2018,
 }
 
 export default constants;
