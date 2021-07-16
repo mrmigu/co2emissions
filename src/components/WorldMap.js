@@ -5,7 +5,7 @@ import {
   Geographies,
   Geography,
 } from "react-simple-maps";
-import { scaleLinear, scaleSqrt, scalePow } from "d3-scale";
+import { scalePow } from "d3-scale";
 import { changeTooltip, initCo2Data } from "../actions";
 import constants from "../constants"
 
@@ -66,8 +66,7 @@ const WorldMap = ({year, co2Data, changeTooltip, initCo2Data}) => {
                             fill={emmisionsData && emmisionsData[year] ? colorScale(emmisionsData[year]) : "#000000"}
                             onMouseEnter={() => {
                                 changeTooltip({
-                                    name: geo?.properties?.NAME,
-                                    co2: emmisionsData && emmisionsData[year],
+                                    name: emmisionsData?.name,
                                 });
                             }}
                             onMouseLeave={() => {

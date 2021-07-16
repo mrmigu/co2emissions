@@ -27,7 +27,6 @@ const mapStateToProps = (state) => {
   return {
        co2Data: state.co2Data,
        year: state.selectedYear,
-       maxCo2: state.maxCo2,
 
    }
 }

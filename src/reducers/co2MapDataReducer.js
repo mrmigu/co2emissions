@@ -1,7 +1,7 @@
 import constants from '../constants';
 import owidCo2Data from '../data/owid-co2-data.json';
 
-const co2DataReducer = (existingCo2Data = null, action) => {
+const co2MapDataReducer = (existingCo2Data = null, action) => {
     if (action.type === "INIT_CO2_DATA" && !existingCo2Data) {
         const co2Data = Object.keys(owidCo2Data).map(country => {
             const countryData = owidCo2Data[country];
@@ -24,4 +24,4 @@ const co2DataReducer = (existingCo2Data = null, action) => {
 
 }
 
-export default co2DataReducer
+export default co2MapDataReducer
