@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/co2emissions/static/css/main.528f692c.chunk.css",
-    "main.js": "/co2emissions/static/js/main.44f5583a.chunk.js",
-    "main.js.map": "/co2emissions/static/js/main.44f5583a.chunk.js.map",
+    "main.js": "/co2emissions/static/js/main.49ce1813.chunk.js",
+    "main.js.map": "/co2emissions/static/js/main.49ce1813.chunk.js.map",
     "runtime-main.js": "/co2emissions/static/js/runtime-main.fcc2b791.js",
     "runtime-main.js.map": "/co2emissions/static/js/runtime-main.fcc2b791.js.map",
     "static/js/2.04296b8f.chunk.js": "/co2emissions/static/js/2.04296b8f.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.fcc2b791.js",
     "static/js/2.04296b8f.chunk.js",
     "static/css/main.528f692c.chunk.css",
-    "static/js/main.44f5583a.chunk.js"
+    "static/js/main.49ce1813.chunk.js"
   ]
 }
